@@ -13,6 +13,7 @@ server_port = "5000"
 pwd = os.getcwd()
 
 print(f"Current working path = {pwd}")
+call(["rm", f"{name_of_file}-01.csv"])
 
 def GetJsonParsingFile():
     cmd = [f"cut -d ' ' -f1,6 {pwd}/{output_file}"]
@@ -42,12 +43,12 @@ def SendStuffToApi():
         print("ERROR! Sending post /AddDevices. ERROR!")
         print(e)
 
-call(["airmon-ng", "start", "wlan0"])
+call(["airmon-ng", "start", "wlan1"])
 
-print("wlan0 in monitor mode...")
+print("wlan1 in monitor mode...")
 
 while True:
-    cmd = ["airodump-ng", "wlan0mon", "-w", f"{pwd}/{name_of_file}", "--output-format", "csv"]
+    cmd = ["airodump-ng", "wlan1mon", "-w", f"{pwd}/{name_of_file}", "--output-format", "csv"]
     print(cmd)
 
     thread_list = []  # starts empty
