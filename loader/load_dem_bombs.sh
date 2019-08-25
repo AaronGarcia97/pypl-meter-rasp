@@ -47,7 +47,7 @@ function Load() {
 	ExecuteLine $curr_ip "kill $(ps aux | grep scanner | awk '{print $2}')"
 	echo "Eliminated last process if existed..."
 	# Run it again, hiding output and send to bg?
-	ExecuteLine $curr_ip "python3 $rasp_binary_path/pypl-meter-rasp/scanner.py > /dev/null 2>&1"
+	ExecuteLine $curr_ip "python3 $rasp_binary_path/pypl-meter-rasp/scanner.py &"
 	echo "New binary succesfully loaded and running..."
 }
 
