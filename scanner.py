@@ -8,7 +8,7 @@ import threading
 global_timer = 15   #seconds to send devices info to post api
 name_of_file = "info"
 output_file = "output"
-server_ip = "10.22.136.99"
+server_ip = "10.22.136.21"
 server_port = "5000"
 pwd = os.getcwd()
 

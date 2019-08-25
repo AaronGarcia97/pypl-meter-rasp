@@ -53,11 +53,16 @@ function Load() {
 
 echo "Starting..."
 
-while IFS= read -r ip_address
-do
-	# For each raspberry pi
-	echo "START: $ip_address"
-	Load $ip_address
-	echo "DONE: $ip_address"
+# Send individual ip_address as parameter
+ip_address=$1
+Load $ip_address
 
-done < "$file_path"
+# This is not iterating appropiately, not sure why
+#while IFS= read -r ip_address
+#do
+	# For each raspberry pi
+#	echo "START: $ip_address"
+	# Load $ip_address
+#	echo "DONE: $ip_address"
+
+#done < "$file_path"
