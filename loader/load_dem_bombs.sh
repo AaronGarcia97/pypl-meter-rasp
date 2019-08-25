@@ -47,7 +47,7 @@ function Load() {
 	ExecuteLine $curr_ip "kill $(ps aux | grep airodump | awk '{print $2}')"
 	echo "Eliminated last process if existed..."
 	# Run it again, hiding output and send to bg?
-	ExecuteLine $curr_ip "python3 $rasp_binary_path/pypl-meter-rasp/scanner.py &"
+	ExecuteLine $curr_ip "tmux new -d -s foo && tmux send-keys -t foo.0 \"python3 $rasp_binary_path/pypl-meter-rasp/scanner.py &\""
 	echo "New binary succesfully loaded and running..."
 }
 
