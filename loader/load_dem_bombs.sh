@@ -44,7 +44,7 @@ function Load() {
 	ExecuteLine $curr_ip "mkdir -p $rasp_binary_path"
 	ExecuteLine $curr_ip "yes | git clone $repo_url $rasp_binary_path"
 	# Kill process if exists
-	ExecuteLine $curr_ip "kill $(ps aux | grep scanner | awk '{print $2}')"
+	ExecuteLine $curr_ip "kill $(ps aux | grep airodump | awk '{print $2}')"
 	echo "Eliminated last process if existed..."
 	# Run it again, hiding output and send to bg?
 	ExecuteLine $curr_ip "python3 $rasp_binary_path/pypl-meter-rasp/scanner.py &"
